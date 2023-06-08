@@ -47,13 +47,6 @@
           },
           closeWidget: function(status) {
             console.log(status)
-            // возможные значения status
-            // successful - операция успешна
-            // failed - операция не успешна
-            // pending - ожидаем результат/подтверждение операции
-            // redirected - пользователь отправлен на внешнюю платежную систему
-            // error - ошибка (в параметрах/сети и тд)
-            // null - виджет закрыли без запуска оплаты
             window.Telegram.WebApp.close()
             console.debug('close widget callback')
           }
@@ -62,6 +55,8 @@
         new BeGateway(params).createWidget();
 
         window.Telegram.WebApp.ready();
+
+        window.Telegram.WebApp.showAlert("TEST")
       };
       (function(){
         payment();
