@@ -28,6 +28,13 @@
               description: "Payment description",
               tracking_id: "my_transaction_id"
             },
+            settings: {
+              style: {
+                widget: {
+                  backgroundColor: window.Telegram.WebApp.themeParams.bg_color,
+                }
+              }
+            }
           },
           closeWidget: function(status) {
             console.log(status)
