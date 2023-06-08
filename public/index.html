@@ -52,10 +52,11 @@
         };
 
         new BeGateway(params).createWidget();
+
+        window.Telegram.WebApp.ready();
       };
       (function(){
         payment();
-        window.Telegram.WebApp.ready()
       })()
     </script>
   </body>
