@@ -13,6 +13,12 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script type="text/javascript" src="https://js.bepaid.by/widget/be_gateway.js"></script>
+
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
     <script type="text/javascript">
       this.payment = function() {
         var params ={
@@ -62,9 +68,5 @@
         payment();
       })()
     </script>
-    <title>React App</title>
-  </head>
-  <body>
-    <div id="root"></div>
   </body>
 </html>
