@@ -6,7 +6,7 @@ const tg = window.Telegram.WebApp
 function App() {
 
     useEffect(() => {
-        window.payment()
+
     }, [])
 
     const onClose = () => {
@@ -16,7 +16,8 @@ function App() {
 
   return (
     <div className="App">
-        <button onClick={onClose}>Close modal</button>
+        {/*<button onClick={onClose}>Close modal</button>*/}
+        {window.payment()}
     </div>
   );
 }
