@@ -23,15 +23,24 @@
             transaction_type: "payment",
             public_key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxMS2arTU9LY/CzxIZOS5+0sWzkMWjFfok31BlHT5Mw0BnQ28to7qFJebeemJjClCzSDwix8eZsXzpclO1yRt8jkmxqAbn8UFfDw+CGdmT3uBMC2+8BfE0aVKhztG5RtTJBBUcGsgJ4hfd4LYeUJMTHdBtF8pmhTfuZJrZj9xVgnarWmhRX568yRTq92VBrYKt0hxUabvmm5Z5weIrWLbtg0FEMRRGjtjx02ePDNAvDxfu08xXwax8wUrNjEuJcKC42iJAPM3oCOky9lBTnaiQpcRCBthScAN8lZmEaJg31l0eLCsUHYysYz5ILurCYHWjLPr7qjWWRVcitLdhJZDCQIDAQAB",
             order: {
-              amount: 100,
-              currency: "EUR",
-              description: "Payment description",
+              amount: 120,
+              currency: "BYN",
+              description: "Оплата печати",
               tracking_id: "my_transaction_id"
             },
             settings: {
+              language: "ru",
               style: {
                 widget: {
                   backgroundColor: window.Telegram.WebApp.themeParams.secondary_bg_color,
+                },
+                button: {
+                  backgroundColor: "#43E2C6"
+                },
+                header: {
+                  close: {
+                    display: "none"
+                  }
                 }
               }
             }
@@ -53,10 +62,6 @@
         new BeGateway(params).createWidget();
 
         window.Telegram.WebApp.ready();
-        console.log(window.Telegram.WebApp.backgroundColor)
-        console.log(window.Telegram.WebApp.headerColor)
-        console.log(window.Telegram.WebApp.themeParams)
-        console.log(window.Telegram.WebApp.themeParams.secondary_bg_color)
       };
       (function(){
         payment();
