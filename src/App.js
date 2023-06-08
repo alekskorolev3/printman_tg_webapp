@@ -1,4 +1,3 @@
-import "https://js.bepaid.by/widget/be_gateway.js"
 import './App.css';
 import {useEffect} from "react";
 
