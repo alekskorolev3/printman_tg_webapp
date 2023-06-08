@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(window)}
+      {console.log(window.Telegram.WebApp.isExpanded)}
     </div>
   );
 }
