@@ -31,11 +31,11 @@
                 button: {
                   backgroundColor: "#43E2C6"
                 },
-                header: {
-                  close: {
-                    display: "none"
-                  }
-                }
+                // header: {
+                //   close: {
+                //     display: "none"
+                //   }
+                // }
               }
             }
           },
@@ -46,21 +46,21 @@
               const data = {
                 status: "successful"
               }
-              return window.Telegram.WebApp.sendData(data)
+              window.Telegram.WebApp.sendData(data)
             }
 
             if (status === null) {
               const data = {
                 status: "closed"
               }
-              return window.Telegram.WebApp.sendData(data)
+             window.Telegram.WebApp.sendData(data)
             }
 
             if (status === "error") {
               const data = {
                 status: "error"
               }
-              return window.Telegram.WebApp.sendData(data)
+              window.Telegram.WebApp.sendData(data)
             }
             window.Telegram.WebApp.close()
             console.debug('close widget callback')
