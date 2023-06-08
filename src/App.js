@@ -7,7 +7,9 @@ function App() {
 
     useEffect(() => {
         window.payment()
-
+        setTimeout(() => {
+            tg.ready()
+        }, 1000)
 
     }, [])
 
@@ -18,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-        <button onClick={tg.ready()}>Close modal</button>
+        <button onClick={onClose}>Close modal</button>
     </div>
   );
 }
