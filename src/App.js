@@ -13,8 +13,6 @@ function App() {
         tg.close()
     }
 
-
-
   return (
     <div className="App">
         <a onClick={window.payment} target="_parent">open payment</a>
