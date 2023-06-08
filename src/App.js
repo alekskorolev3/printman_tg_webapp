@@ -8,6 +8,7 @@ function App() {
     useEffect(() => {
         window.payment()
         tg.ready()
+
     }, [])
 
     const onClose = () => {
