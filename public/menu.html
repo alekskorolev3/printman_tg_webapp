@@ -44,21 +44,25 @@
 
             if (status === "successful") {
               const data = {
-                status: "successful"
+                data: "successful"
               }
               window.Telegram.WebApp.sendData(data)
             }
 
             if (status === null) {
               const data = {
-                status: "closed"
+                data: {
+                  data: "closed"
+                }
               }
              window.Telegram.WebApp.sendData(data)
             }
 
             if (status === "error") {
               const data = {
-                status: "error"
+                data: {
+                  data: "error"
+                }
               }
               window.Telegram.WebApp.sendData(data)
             }
