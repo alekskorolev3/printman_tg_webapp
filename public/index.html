@@ -10,34 +10,46 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script type="text/javascript" src="https://js.bepaid.by/widget/be_gateway.js"></script>
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script type="text/javascript">
+      this.payment = function() {
+        var params ={
+          checkout_url: "https://checkout.bepaid.by",
+          checkout: {
+            iframe: true,
+            test: true,
+            transaction_type: "payment",
+            public_key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxMS2arTU9LY/CzxIZOS5+0sWzkMWjFfok31BlHT5Mw0BnQ28to7qFJebeemJjClCzSDwix8eZsXzpclO1yRt8jkmxqAbn8UFfDw+CGdmT3uBMC2+8BfE0aVKhztG5RtTJBBUcGsgJ4hfd4LYeUJMTHdBtF8pmhTfuZJrZj9xVgnarWmhRX568yRTq92VBrYKt0hxUabvmm5Z5weIrWLbtg0FEMRRGjtjx02ePDNAvDxfu08xXwax8wUrNjEuJcKC42iJAPM3oCOky9lBTnaiQpcRCBthScAN8lZmEaJg31l0eLCsUHYysYz5ILurCYHWjLPr7qjWWRVcitLdhJZDCQIDAQAB",
+            order: {
+              amount: 100,
+              currency: "EUR",
+              description: "Payment description",
+              tracking_id: "my_transaction_id"
+            },
+          },
+          closeWidget: function(status) {
+            // возможные значения status
+            // successful - операция успешна
+            // failed - операция не успешна
+            // pending - ожидаем результат/подтверждение операции
+            // redirected - пользователь отправлен на внешнюю платежную систему
+            // error - ошибка (в параметрах/сети и тд)
+            // null - виджет закрыли без запуска оплаты
+            console.debug('close widget callback')
+          }
+        };
+
+        new BeGateway(params).createWidget();
+      };
+    </script>
   </body>
 </html>
