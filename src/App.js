@@ -6,8 +6,8 @@ const tg = window.Telegram.WebApp
 function App() {
 
     useEffect(() => {
-        tg.ready()
         window.payment()
+        tg.ready()
     }, [])
 
     const onClose = () => {
