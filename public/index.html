@@ -1,75 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script type="text/javascript" src="https://js.bepaid.by/widget/be_gateway.js"></script>
-    <script type="text/javascript">
-      this.payment = function() {
-        var params ={
-          checkout_url: "https://checkout.bepaid.by",
-          checkout: {
-            iframe: true,
-            test: true,
-            transaction_type: "payment",
-            public_key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxMS2arTU9LY/CzxIZOS5+0sWzkMWjFfok31BlHT5Mw0BnQ28to7qFJebeemJjClCzSDwix8eZsXzpclO1yRt8jkmxqAbn8UFfDw+CGdmT3uBMC2+8BfE0aVKhztG5RtTJBBUcGsgJ4hfd4LYeUJMTHdBtF8pmhTfuZJrZj9xVgnarWmhRX568yRTq92VBrYKt0hxUabvmm5Z5weIrWLbtg0FEMRRGjtjx02ePDNAvDxfu08xXwax8wUrNjEuJcKC42iJAPM3oCOky9lBTnaiQpcRCBthScAN8lZmEaJg31l0eLCsUHYysYz5ILurCYHWjLPr7qjWWRVcitLdhJZDCQIDAQAB",
-            order: {
-              amount: 100,
-              currency: "EUR",
-              description: "Payment description",
-              tracking_id: "my_transaction_id"
-            },
-          },
-          closeWidget: function(status) {
-            console.log(status)
-            // возможные значения status
-            // successful - операция успешна
-            // failed - операция не успешна
-            // pending - ожидаем результат/подтверждение операции
-            // redirected - пользователь отправлен на внешнюю платежную систему
-            // error - ошибка (в параметрах/сети и тд)
-            // null - виджет закрыли без запуска оплаты
-            window.Telegram.WebApp.close()
-            console.debug('close widget callback')
-          }
-        };
-
-        new BeGateway(params).createWidget();
-
-        window.Telegram.WebApp.ready();
-      };
-      // (function(){
-      //   payment();
-      // })()
-    </script>
-    <title>React App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-
-    <form id="form">
-      <label>Test field: <input type="text" /></label>
-      <br /><br />
-      <button type="submit">Submit form</button>
-    </form>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
     <script>
-      const form = document.getElementById("form");
-      form.addEventListener("submit", formSubmit);
-
-      function formSubmit(event) {
-        event.preventDefault()
-        window.payment()
-      }
+        window.Telegram.WebApp.ready();
     </script>
-  </body>
+    <iframe src="menu.html">
+
+    </iframe>
+</body>
 </html>
